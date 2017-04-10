@@ -12,5 +12,5 @@ This was really interesting because I never did that before, and I would like to
 We achieved to download a git project and to generate it, now, to continue the integration, we need to wait Yannick Mayeur’s maven build.
 
 1. Final Task :
-  My last mission was to create the game of life, including the january library. 
+  My last mission was to create a game of life, including the january library. 
 I worked on this project for the last two days, and I arrived to something working, the problem is that only one direction is evolving and cells who would need to die are keeping alive…
