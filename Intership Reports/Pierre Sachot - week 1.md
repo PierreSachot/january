@@ -1,4 +1,4 @@
-#Pierre Sachot internship report week 1
+# Pierre Sachot internship report week 1
 
 1. First task :
   During this first week in Kichwa coders company, I worked on divers topics. 
