@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/RemoteSystemsTempFiles/RemoteSystemsTempFiles.iml" filepath="$PROJECT_DIR$/RemoteSystemsTempFiles/RemoteSystemsTempFiles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/org.eclipse.january/org.eclipse.january.iml" filepath="$PROJECT_DIR$/org.eclipse.january/org.eclipse.january.iml" />
+      <module fileurl="file://$PROJECT_DIR$/org.eclipse.january.asserts/org.eclipse.january.asserts.iml" filepath="$PROJECT_DIR$/org.eclipse.january.asserts/org.eclipse.january.asserts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/org.eclipse.january.examples/org.eclipse.january.examples.iml" filepath="$PROJECT_DIR$/org.eclipse.january.examples/org.eclipse.january.examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/releng/org.eclipse.january.releng/org.eclipse.january.releng.iml" filepath="$PROJECT_DIR$/releng/org.eclipse.january.releng/org.eclipse.january.releng.iml" />
+      <module fileurl="file://$PROJECT_DIR$/releng/org.eclipse.january.releng.p2/org.eclipse.january.releng.p2.iml" filepath="$PROJECT_DIR$/releng/org.eclipse.january.releng.p2/org.eclipse.january.releng.p2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/releng/org.eclipse.january.releng.target/org.eclipse.january.releng.target.iml" filepath="$PROJECT_DIR$/releng/org.eclipse.january.releng.target/org.eclipse.january.releng.target.iml" />
+      <module fileurl="file://$PROJECT_DIR$/org.eclipse.january.test/org.eclipse.january.test.iml" filepath="$PROJECT_DIR$/org.eclipse.january.test/org.eclipse.january.test.iml" />
+    </modules>
+  </component>
+</project>
