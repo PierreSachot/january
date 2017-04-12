@@ -14,26 +14,39 @@ package org.eclipse.january.dataset;
 
 import java.io.Serializable;
 
-/**
- * This class permit to put splitting properties used in a Dataset to split it in a wanted way.
- * It's need a start point, a stop point and a step value. If every informations are null, the start will be set to 0
- * the step to 1 and the end to the entire size of the Dataset on which you apply the Slice.
- * <br>
- * For exemple :
+/**	
+ * The {@code Slice} class represents the set of indices (start, stop, step), that are used to extract specifics subsets of {@link org.eclipse.january.dataset.Dataset}.<br><br>
+ * The start argument default to 0, stop argument default to the end of the Dataset on which you are applying to the Slice and the default argument for the step is 1.
+ * <br><br>
+ * The start index is inclusive, for example, if we want to get data from index 1, so sliceData will be <b>[2,3]</b> :
  * <pre>
 * {@code
-* final Dataset onedData = DatasetFactory.createFromObject(new int[]{10,9,8,7,6,5,4,3,2,1,0});
-* Dataset newOnedData = onedData.getSlice(new Slice(4, 7));
-* System.out.println(newOnedData.toString(true));
+* final Dataset onedData = DatasetFactory.createFromObject(new int[]{1,2,3});
+* Dataset sliceData = onedData.getSlice(new Slice(1, null, null));
 * }
 * </pre>
-* Will display : Dataset [6, 5, 4]
 * 
+* If Slice is specified with only one argument, this will be the stop index which is exclusive. In this case sliceData will be <b>[1,2]</b> :
+ * <pre>
+* {@code
+* final Dataset onedData = DatasetFactory.createFromObject(new int[]{1,2,3});
+* Dataset sliceData = onedData.getSlice(new Slice(2));
+* }
+* </pre>
+* 
+* To create a 1D Slice, so sliceData is : <b>[6, 5, 4]</b>, we will do :
+* <pre>
+* {@code
+* final Dataset sliceData = DatasetFactory.createFromObject(new int[]{10,9,8,7,6,5,4,3,2,1,0});
+* Dataset newOnedData = sliceData.getSlice(new Slice(4, 7, 1));
+* }
+* </pre>
+* <br>
 * For more informations, see the sliceFrom1D example in SlicingExamples.
  */
 public class Slice implements Cloneable, Serializable {
 
-	
+	String bob;
 	private static final long serialVersionUID = 3714928852236201310L;
 	private Integer start;
 	private Integer stop;
