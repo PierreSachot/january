@@ -18,6 +18,18 @@ import java.io.Serializable;
  * This class permit to put splitting properties used in a Dataset to split it in a wanted way.
  * It's need a start point, a stop point and a step value. If every informations are null, the start will be set to 0
  * the step to 1 and the end to the entire size of the Dataset on which you apply the Slice.
+ * <br>
+ * For exemple :
+ * <pre>
+* {@code
+* final Dataset onedData = DatasetFactory.createFromObject(new int[]{10,9,8,7,6,5,4,3,2,1,0});
+* Dataset newOnedData = onedData.getSlice(new Slice(4, 7));
+* System.out.println(newOnedData.toString(true));
+* }
+* </pre>
+* Will display : Dataset [6, 5, 4]
+* 
+* For more informations, see the sliceFrom1D example in SlicingExamples.
  */
 public class Slice implements Cloneable, Serializable {
 
