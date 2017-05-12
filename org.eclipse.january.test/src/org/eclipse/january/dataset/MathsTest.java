@@ -2214,7 +2214,7 @@ public class MathsTest {
 		Dataset actualResult = Maths.hypot(a, b);
 		TestUtils.assertDatasetEquals(expectedResult, actualResult, true, ABSERRD, ABSERRD);
 	}
-
+	
 	@Test
 	public void testAbsComplexInput() {
 		double[] ds = new double[] { -0, 1, 2, -3, 4, 5 };
