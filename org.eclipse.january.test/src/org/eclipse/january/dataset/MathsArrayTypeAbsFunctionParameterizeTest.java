@@ -26,25 +26,32 @@ public class MathsArrayTypeAbsFunctionParameterizeTest {
 
 	@Test
 	public void test() throws Exception {
-		Class<? extends CompoundDataset> class1 = classType;
-		byte[] ba = { 0, 8, -1, 2, 3, 5, 6, 41, 7, 95, 8, -74, 9, 41, 11 };
-		Dataset a = DatasetFactory.createFromObject(ba);
-		CompoundDataset input = DatasetUtils.createCompoundDataset(class1, a);
+		Class<? extends CompoundDataset> class1 = classType;		
 
-		int size = a.getSize();
-		double[] c = new double[size];
-		for (int i = 0; i < size; i++) {
-			double abs = Math.abs(ba[i]);
-			c[i] = abs;
+		// Test for multiple elements per item entry
+		byte[][] baM = { { 0, 8, -1, 2, 3, 5, 6, 41, 7, 95, 8, -74, 9, 41, 11 },
+				{ 0, 8, -1, 2, 3, 5, 6, 41, 7, 95, 8, -74, 9, 41, 11 } };
+		Dataset aM = DatasetFactory.createFromObject(baM);
+		CompoundDataset inputM = DatasetUtils.createCompoundDataset(class1, aM);
+
+		int sizeEntry[] = aM.getShape();
+		double[][] cM = new double[sizeEntry[0]][sizeEntry[1]];
+		for (int i = 0; i < sizeEntry[0]; i++) {
+			for (int j = 0; j < sizeEntry[1]; j++) {
+				double abs = Math.abs(baM[i][j]);
+				cM[i][j] = abs;
+			}
 		}
-		CompoundDataset expectedResult = DatasetUtils.createCompoundDataset(class1, DatasetFactory.createFromObject(c));
-		CompoundDataset output = DatasetUtils.createCompoundDataset(class1,
-				DatasetFactory.createFromObject(new float[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }));
+		CompoundDataset expectedResultM = DatasetUtils.createCompoundDataset(class1,
+				DatasetFactory.createFromObject(cM));
+		CompoundDataset outputM = DatasetUtils.createCompoundDataset(class1,
+				DatasetFactory.createFromObject(new byte[][] { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+						{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } }));
 
-		Dataset actual = Maths.abs(input, output);
-		CompoundDataset actualResult = DatasetUtils.createCompoundDataset(actual);
-		System.out.println(expectedResult.toString(true));
-		System.out.println(actualResult.toString(true));
-		TestUtils.assertDatasetEquals(expectedResult, actualResult, true, ABSERRD, ABSERRD);
+		Dataset actualM = Maths.abs(inputM, outputM);
+		CompoundDataset actualResultM = DatasetUtils.createCompoundDataset(actualM);
+		TestUtils.assertDatasetEquals(expectedResultM, actualResultM, true, ABSERRD, ABSERRD);
 	}
+	
+	
 }

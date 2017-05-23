@@ -31,7 +31,6 @@ public class MathsBasicTypeAbsFunctionParameterizeTest {
 		double[] obj = new double[] {4.2, -2.9, 6.10};
 		Dataset input = DatasetFactory.createFromObject(class1, obj);
 		Dataset output = DatasetFactory.createFromObject(class1, new double[]{0,0,0});
-		System.out.println(output.getElementsPerItem());
 
 		int size = input.getSize();
 		double[] c = new double[size];
